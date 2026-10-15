@@ -7,7 +7,6 @@ import RouteProgress from "../common/RouteProgress";
 
 
 export default function AppLayout() {
-    const isMobile = useLayoutEffect(); // Example breakpoint for mobile devices
     return (<>
         <RouteProgress />
         <SidebarProvider
