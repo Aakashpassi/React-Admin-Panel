@@ -2,7 +2,7 @@
 export default function Reports() {
   return (
     <div>
-      <h1>Reports</h1>
+      <h1>Reports development</h1>
 
       <p>
         Reports page.
