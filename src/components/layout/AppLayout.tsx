@@ -7,6 +7,7 @@ import RouteProgress from "../common/RouteProgress";
 
 
 export default function AppLayout() {
+    const error  = useloadError();
     return (<>
         <RouteProgress />
         <SidebarProvider
