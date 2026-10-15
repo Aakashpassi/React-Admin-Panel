@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practiceapp</title>
+
+    
+<style>
+  #app-preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: #fafbff;
+    color: #171a35;
+    font-family: Arial, sans-serif;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+
+  #app-preloader.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  
+
+  .preloader-content {
+    text-align: center;
+    animation: content-enter 0.7s ease both;
+  }
+
+  .preloader-logo {
+    display: grid;
+    place-items: center;
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 18px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #818cf8, #4f46e5, #7c3aed);
+    box-shadow: 0 12px 35px #6366f140;
+    color: white;
+    font-size: 46px;
+    font-weight: 800;
+    animation: logo-float 2s ease-in-out infinite;
+  }
+
+  .preloader-title {
+    margin: 0;
+    font-size: 38px;
+    font-weight: 750;
+    letter-spacing: -1.5px;
+  }
+
+  .preloader-title span {
+    color: #5b55ee;
+  }
+
+  .preloader-tagline {
+    margin-top: 8px;
+    color: #7a83a3;
+    letter-spacing: 2px;
+  }
+
+  .preloader-dots {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 45px;
+  }
+
+  .preloader-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #7772f4;
+    animation: dot-bounce 1s ease-in-out infinite;
+  }
+
+  .preloader-dots span:nth-child(2) { animation-delay: 0.1s; }
+  .preloader-dots span:nth-child(3) { animation-delay: 0.2s; }
+  .preloader-dots span:nth-child(4) { animation-delay: 0.3s; }
+  .preloader-dots span:nth-child(5) { animation-delay: 0.4s; }
+
+  .preloader-message {
+    margin-top: 20px;
+    color: #626b8c;
+    font-size: 14px;
+  }
+
+  @keyframes dot-bounce {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-7px); opacity: 1; }
+  }
+
+  @keyframes logo-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
+  @keyframes content-enter {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .preloader-content,
+    .preloader-logo,
+    .preloader-dots span {
+      animation: none;
+    }
+  }
+</style>
+
+  </head>
+ 
+<body>
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">A</div>
+
+      <h1 class="preloader-title">
+        Practice<span>App</span>
+      </h1>
+
+      <p class="preloader-tagline">Build · Learn · Grow</p>
+
+      <div class="preloader-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <p class="preloader-message">
+        Preparing your workspace...
+      </p>
+    </div>
+  </div>
+
+  <div id="root"></div>
+
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
